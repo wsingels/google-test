@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Node.js was installed at
+
+   /usr/local/bin/node
+
+npm was installed at
+
+   /usr/local/bin/npm
+
+Make sure that /usr/local/bin is in your $PATH.-->
+    <head>
+        <title>
+            AUTH
+        </title>
+        <meta charset="UTF-8">
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDNuXSeiOG2KQw0dRzkgAsEhSpBQcoBMuY",
+            authDomain: "gtest-ba5f5.firebaseapp.com",
+            databaseURL: "https://gtest-ba5f5.firebaseio.com",
+            projectId: "gtest-ba5f5",
+            storageBucket: "gtest-ba5f5.appspot.com",
+            messagingSenderId: "288059389351"
+          };
+          firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <script>
+            firebase.auth().onAuthStateChanged(function (user) {
+                if(user) {
+                    document.body.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your emial address or reset your password? Firebase can handle all of that for you using the email provided ' + user.email + '. </h2>';
+                } else {
+                    console.log("no user signed in");
+                }
+            });
+        </script>
+    </body>
+</html>
