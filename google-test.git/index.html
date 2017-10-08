@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Node.js was installed at
+   /usr/local/bin/node
+npm was installed at
+   /usr/local/bin/npm
+Make sure that /usr/local/bin is in your $PATH.-->
+    <head>
+        <title>
+            AUTH
+        </title>
+        <meta charset="UTF-8">
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDNuXSeiOG2KQw0dRzkgAsEhSpBQcoBMuY",
+            authDomain: "gtest-ba5f5.firebaseapp.com",
+            databaseURL: "https://gtest-ba5f5.firebaseio.com",
+            projectId: "gtest-ba5f5",
+            storageBucket: "gtest-ba5f5.appspot.com",
+            messagingSenderId: "288059389351"
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.js">
+        </script>
+        <link type="text/css"
+        rel="stylesheet"
+        href="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.css" />
+        <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    </head>
+    <body>
+        <h1 align = "center">
+            Hello World!
+        </h1>
+        <div id = "firebaseui-auth-container">
+
+        </div>
+
+    </body>
+</html>
